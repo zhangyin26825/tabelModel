@@ -31,6 +31,12 @@ public abstract class JavaFileClassBody extends JavaFileString {
         this.fieldFactory = fieldFactory;
     }
 
+    public void initField(FieldFactory fieldFactory, List<? extends FieldSource> fieldSources){
+        this.fieldFactory=fieldFactory;
+        this.fieldSources=fieldSources;
+    }
+
+
     @Override
     public String classbody() {
         StringBuffer stringBuffer=new StringBuffer();

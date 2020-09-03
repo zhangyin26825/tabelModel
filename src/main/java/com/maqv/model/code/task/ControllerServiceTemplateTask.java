@@ -73,9 +73,7 @@ public class ControllerServiceTemplateTask {
         PsiField[] fields = aClass.getFields();
         int fieldCount=fields.length+1;
         int code=(1000+fieldCount)*10000;
-
         String fieldName=table.getTableName().toUpperCase()+"_CODE_PREFIX";
-
         if(PsiClassUtils.existedField(aClass,fieldName)){
             return;
         }

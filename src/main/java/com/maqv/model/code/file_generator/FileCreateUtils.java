@@ -43,7 +43,6 @@ public class FileCreateUtils {
         PsiClass aClass = G.findClass(qualifiedName);
         if(aClass!=null&&!fileType.isOverride()){
             //文件以及存在 并且 文件不支持override
-
         }else {
             JavaFileClassBody fileContent = Manager.getFileContent(object, fileType);
             if(CollectionUtils.isNotEmpty(imports)) {

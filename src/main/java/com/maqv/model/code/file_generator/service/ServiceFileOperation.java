@@ -18,6 +18,7 @@ public class ServiceFileOperation implements FileOperation<Table> {
     public QualifiedName getQualifiedName(Table table) {
         String packageName = G.getProperties(PropertiesKey.ServiceKey);
         String className = JavaCodeElement.convertTableNameToClassName(table.getTableName());
+        packageName=packageName+ JavaCodeElement.DOT+className.toLowerCase();
         return new QualifiedName(packageName+ JavaCodeElement.DOT+className+"Service");
     }
 

@@ -2,7 +2,7 @@ package com.maqv.model.code.action;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DataKeys;
+import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.maqv.model.code.idea.G;
@@ -20,7 +20,7 @@ public abstract class CommonAction extends AnAction {
 
     @Override
     public void update(AnActionEvent e) {
-        VirtualFile virtualFile = e.getData(DataKeys.VIRTUAL_FILE);
+        VirtualFile virtualFile = e.getData(LangDataKeys.VIRTUAL_FILE);
         if(virtualFile!=null&&virtualFile.getName().equals(FILE_NAME)){
             e.getPresentation().setEnabled(true);
             e.getPresentation().setVisible(true);
@@ -34,7 +34,7 @@ public abstract class CommonAction extends AnAction {
     public void actionPerformed(AnActionEvent e) {
         try {
             Project project = e.getProject();
-            VirtualFile virtualFile = e.getData(DataKeys.VIRTUAL_FILE);
+            VirtualFile virtualFile = e.getData(LangDataKeys.VIRTUAL_FILE);
             Properties properties = new Properties();
             properties.load(virtualFile.getInputStream());
             G.init(project,properties);

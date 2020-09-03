@@ -1,11 +1,11 @@
 <idea-plugin>
     <id>com.maqv.table.model.code</id>
     <name>Maqv Table Class Generator</name>
-    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+    <vendor email="459402930@qq.com" url="http://www.yourcompany.com">玛曲信息技术</vendor>
 
     <description><![CDATA[
-    Enter short description for your plugin here.<br>
-    <em>most HTML tags may be used</em>
+    生成数据库相关代码，包含dao mapper mybatisXml
+    也可生成 controller  service 模板层代码
     ]]></description>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
@@ -13,6 +13,9 @@
     <!-- uncomment to enable plugin in all products
     <depends>com.intellij.modules.lang</depends>
     -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+    <depends>com.intellij.modules.all</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
@@ -30,6 +33,9 @@
 
         <action id="maqv service controller Generate" class="com.maqv.model.code.action.ControllerServiceTemplateAction"                              text="ServiceController模板" description="ServiceController模板">
             <add-to-group group-id="Maqv.Code.Generate" anchor="after" relative-to-action="maqv DB Generate"></add-to-group>
+        </action>
+        <action id="maqv javafx test" class="com.maqv.model.code.action.JavaFxTestAction" text="JavaFx测试">
+            <add-to-group group-id="Maqv.Code.Generate" anchor="after" relative-to-action="maqv service controller Generate"></add-to-group>
         </action>
     </actions>
 </idea-plugin>

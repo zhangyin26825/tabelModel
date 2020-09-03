@@ -88,6 +88,7 @@ public class ImportConstants {
         paramImports.add("javax.validation.constraints.NotNull");
         paramImports.add("javax.validation.constraints.Size");
         paramImports.add("java.util.List");
+        paramImports.add("org.springframework.beans.BeanUtils");
     }
 
 }
